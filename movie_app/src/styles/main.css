@@ -290,7 +290,13 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
+}
+
+.heroBackdropImgPoster {
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .heroOverlay {
@@ -637,10 +643,13 @@ input {
 }
 
 .empty {
+  font-size: 23px;
+  font-family:sans-serif;
   border: 1px dashed rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.04);
-  border-radius: var(--radius);
-  padding: var(--space-5);
+  border-radius: 90px;
+  padding: 45px;
+  margin: 20px;
   color: rgba(255, 255, 255, 0.70);
   text-align: center;
 }
@@ -901,13 +910,38 @@ input {
 }
 
 .searchButton {
-  width: 34px;
-  height: 34px;
-  border: 3px solid rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
   border-radius: 999px;
-  background: rgba(170, 156, 156, 0.341);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(90deg,
+      rgba(255, 45, 85, 0.18),
+      rgba(155, 92, 255, 0.14),
+      rgba(53, 182, 255, 0.12));
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
   cursor: pointer;
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  box-shadow: var(--glow-blue);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 200ms ease;
+}
+
+.searchButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: var(--glow-red), var(--glow-blue);
+}
+
+.searchButton:focus-visible {
+  outline: none;
+  border-color: rgba(53, 182, 255, 0.35);
+  box-shadow: var(--glow-blue);
+}
+
+.searchButton:active {
+  transform: translateY(0) scale(0.98);
 }

@@ -6,6 +6,10 @@ A full-stack content-based movie recommendation system built with React and Fast
 
 This application recommends movies based on textual similarity of metadata such as genres, keywords, cast, director, and overview.
 
+# 🖼 Demo
+
+![Movie Recommendation System Demo](demo.png)
+
 # 🚀 Project Overview
 
 This project implements a Content-Based Filtering Recommendation Engine using Natural Language Processing techniques.

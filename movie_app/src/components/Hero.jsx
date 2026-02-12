@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion'
-// import { sim_movies,tmdb_movies } from './Navbar'
 
 export default function Hero({ movie, onExplore }) {
   const reduceMotion = useReducedMotion()
@@ -16,6 +15,11 @@ export default function Hero({ movie, onExplore }) {
     backdrop: 'https://via.placeholder.com/2000x1200',
   }
 
+  const heroImage = displayMovie.backdrop 
+  const imageClassName = displayMovie.backdrop
+    ? 'heroBackdropImg'
+    : 'heroBackdropImg heroBackdropImgPoster'
+
   return (
     <section className="hero" aria-label="Featured movie">
       <div className="container">
@@ -26,7 +30,11 @@ export default function Hero({ movie, onExplore }) {
           transition={{ duration: 0.55, ease: [0.2, 0.9, 0.2, 1] }}
         >
           <div className="heroBackdrop" aria-hidden="true">
-            <img className="heroBackdropImg" src={"https://image.tmdb.org/t/p/w1280/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg"} alt="" />
+            <img
+              className={imageClassName}
+              src={heroImage}
+              alt={displayMovie.title || 'Featured movie'}
+            />
           </div>
           <div className="heroOverlay" aria-hidden="true" />
 
@@ -35,7 +43,7 @@ export default function Hero({ movie, onExplore }) {
               <span className="kickerDot" /> Featured
             </div>
             <h1 className="heroTitle">{displayMovie.title}</h1>
-            {/* <p className="heroTagline">{displayMovie.tagline}</p> */}
+            <p className="heroTagline">{displayMovie.description || displayMovie.tagline}</p>
 
             <div className="heroMeta">
               <span className="badge">

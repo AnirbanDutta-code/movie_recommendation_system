@@ -69,8 +69,8 @@ export default function MovieCard({ movie, isFavorite, onToggleFavorite, loading
             <h3 className="movieTitle">{movie.title}</h3>
             <div className="subtle">{movie.year}</div>
           </div>
-          <span className="rating" aria-label={`Rating ${movie.rating.toFixed(1)}`}>
-            <StarIcon className="ratingStar" /> {movie.rating.toFixed(1)}
+          <span className="rating" aria-label={`Rating ${movie.rating}`}>
+            <StarIcon className="ratingStar" /> {movie.rating}
           </span>
         </div>
         <p className="movieDesc">{movie.description}</p>
