@@ -220,12 +220,3 @@ If you like this project, consider giving it a ⭐ on GitHub.
 
 If you want, I can now:
 
-## 🔥 Make a more portfolio-optimized version (for recruiters)
-
-## 📄 Create a short LinkedIn project description
-
-## 🚀 Add a deployment section
-
-## 📈 Add an Architecture Diagram section
-
-## 🧩 Make it more “production-grade” sounding**
