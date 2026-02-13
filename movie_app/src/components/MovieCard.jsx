@@ -48,7 +48,9 @@ export default function MovieCard({ movie, isFavorite, onToggleFavorite, loading
     )
   }
 
-  const primaryCategory = movie.categories[0] || 'Drama'
+  const genresLabel = Array.isArray(movie.categories) && movie.categories.length
+    ? movie.categories.slice(0, 3).join(' • ')
+    : 'Drama'
 
   return (
     <article className="card" aria-label={movie.title}>
@@ -73,10 +75,10 @@ export default function MovieCard({ movie, isFavorite, onToggleFavorite, loading
             <StarIcon className="ratingStar" /> {movie.rating}
           </span>
         </div>
-        <p className="movieDesc">{movie.description}</p>
+        <p className="movieDesc">{movie.description || "No description availabe"}</p>
         <div className="cardMeta">
-          <span className="tag">{primaryCategory}</span>
-          <span className="tag">{movie.trending ? 'Trending' : 'Curated'}</span>
+          <span className="tag genresTag">{genresLabel}</span>
+          <span className="tag statusTag">{movie.trending ? 'Trending' : 'Curated'}</span>
         </div>
       </div>
     </article>

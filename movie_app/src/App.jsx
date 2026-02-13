@@ -161,7 +161,7 @@ export default function App() {
     return (
       sorted[0] || {
         id: "default",
-        title: "Loading...",
+        title: "seacrh to start.....",
         description: "Discover your next favorite movie",
         year: 2024,
         rating: 0,

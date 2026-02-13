@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import HamburgerMenu from "./HamburgerMenu.jsx";
 import SearchBar from "./SearchBar.jsx";
 import { parseAnimateLayoutArgs } from "framer-motion";
+import searchIcon from "../../resources/search.svg";
+import movieIcon from "../../resources/movie.svg";
 
 
 const NAV = [
@@ -154,10 +156,12 @@ export default function Navbar({
       <div className="container">
         <div className="navInner">
           <div className="brand" role="banner" aria-label="CinePulse">
-            <div className="brandMark" aria-hidden="true" />
+            <div className="brandMark" aria-hidden="true">
+              <img className="brandMarkIcon" src={movieIcon} alt="" />
+            </div>
             <div>
-              <div className="brandTitle">CinePulse</div>
-              <div className="brandSubtitle">Cinematic recommendations</div>
+              <div className="brandTitle">MovieWorld</div>
+              {/* <div className="brandSubtitle">Cinematic recommendations</div> */}
             </div>
           </div>
 
@@ -185,7 +189,10 @@ export default function Navbar({
             <button
               className="searchButton"
               onClick={handleFetchRecommendation}
-            ></button>
+              aria-label="Search recommendations"
+            >
+              <img className="searchButtonIcon" src={searchIcon} alt="" aria-hidden="true" />
+            </button>
             <HamburgerMenu
               isOpen={isOpen}
               onToggle={() => setIsOpen((v) => !v)}

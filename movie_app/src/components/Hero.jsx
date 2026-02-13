@@ -6,7 +6,7 @@ export default function Hero({ movie, onExplore }) {
 
   // Handle default movie if not provided
   const displayMovie = movie || {
-    title: 'Loading...',
+    title: 'loading...',
     description: 'Discover your next favorite movie',
     year: 2024,
     rating: 0,

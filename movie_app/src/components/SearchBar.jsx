@@ -41,7 +41,8 @@ export default function SearchBar({ value, onChange, onClear }) {
 
   return (
     <div className={expanded ? 'searchWrap searchWrapExpanded' : 'searchWrap'}>
-      <SearchIcon className="searchIcon" />
+      <SearchIcon className="searchIcon"  />
+      {/* <img className=" "src="/home/anirban/projects/movie_recomendation_system/movie_app/resources/search.svg" alt="" /> */}
       <input
         className="searchInput"
         value={value}
